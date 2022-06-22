@@ -16,13 +16,17 @@
             <br><input placeholder="Code..." id="code"><br><br>
             <button onclick="join()">Join game via code</button>
         </div>
+        <br>
+        - or -
+        <br><br>
+        <button onclick="rename()">Rename yourself</button>
     </div>
 </body>
 <script>
     function checkUsername() {
         if(localStorage.getItem("us_username") == null) {
             let username = prompt("Please enter a username to identify you by.");
-            while(username == null || username == "" || username.length == 0 || username.replace(/\s/g, '').length == 0) {
+            while(username == null || username == "" || username.length == 0 || username.replace(/\s/g, '').length == 0 || username.match(/<|>|\/|\\/g)) {
                 username = prompt("Please enter a username to identify you by.");
             }
             localStorage.setItem("us_username", username.replace(/\s/g, ''));
@@ -32,13 +36,20 @@
         checkUsername()
         let room = Math.floor(Math.random() * (94323344234123 - 12544523)) + 12544523;
         room = room.toString().replace(/4/g, 'v').replace(/2/g, 't').replace(/6/g, 'h').replace(/8/g, 'c').replace(/0/g, 'd')
-        window.location.href = "/lobby?id=" + room
+        window.location.href = "/game?id=" + room
     }
     function join() {
         checkUsername()
         let code = document.getElementById("code").value;
         if(code.replace(/\s/g, '').length == 0) return
-        window.location.href = "/lobby?id=" + code.replace(/\s/g, '')
+        window.location.href = "/game?id=" + code.replace(/\s/g, '')
+    }
+    function rename() {
+        let username = prompt("Please enter a username to identify you by.");
+        while(username == null || username == "" || username.length == 0 || username.replace(/\s/g, '').length == 0 || username.match(/<|>|\/|\\/g)) {
+            username = prompt("Please enter a username to identify you by.");
+        }
+        localStorage.setItem("us_username", username.replace(/\s/g, ''));
     }
 </script>
 <style>
