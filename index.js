@@ -6,19 +6,19 @@ const port = process.env.PORT || 3000;
 let rooms = []
 
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/assets/main.html")
+    res.sendFile(__dirname + "/assets/html/main.html")
 })
 
 app.get("/game", (req, res) => {
-    res.sendFile(__dirname + "/assets/lobby.html")
+    res.sendFile(__dirname + "/assets/html/lobby.html")
 })
 
 app.get("/lobby/script.js", (req, res) => {
-    res.sendFile(__dirname + "/assets/lobby.js")
+    res.sendFile(__dirname + "/assets/js/lobby.js")
 })
 
 app.get("/ui", (req, res) => {
-    res.sendFile(__dirname + "/assets/ui.html")
+    res.sendFile(__dirname + "/assets/html/ui.html")
 })
 
 app.get("/img/:img", (req, res) => {
@@ -26,7 +26,7 @@ app.get("/img/:img", (req, res) => {
 })
 
 app.get("/css/:css", (req, res) => {
-    res.sendFile(__dirname + "/assets/" + req.params.css)
+    res.sendFile(__dirname + "/assets/css/" + req.params.css)
 })
 
 let server = app.listen(port, () => console.log("Listening on port " + port));
