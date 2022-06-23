@@ -7,4 +7,90 @@
     height: 100%;
 }
 
-/* for cards clip-path: ellipse(25% 40% at 50% 50%); */
+.card {
+    /* width: 100px;
+    height: 150px; */
+    width: 100px;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.b {
+    background-color: rgb(54, 54, 255);
+    color: white;
+    border: white solid 1px;
+}
+
+.y {
+    background-color: rgb(255, 255, 0);
+    color: black;
+    border: white solid 1px;
+}
+
+.r {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: white solid 1px;
+}
+
+.g {
+    background-color: rgb(0, 255, 0);
+    color: black;
+    border: white solid 1px;
+}
+
+.black {
+    background-color: black;
+    color: white;
+    border: white solid 1px;
+}
+
+.changeblack > .middle {
+    top: 35%;
+}
+
+.stopcard > .middle {
+    top: 27%;
+    left: 35%;
+}
+.stopcard > .bottom-right {
+    top: 55%;
+}
+
+.reversecard > .middle {
+    top: 30%;
+    left: 35%;
+}
+
+.reversecard > .bottom-right {
+    top: 55%;
+    left: 75%;
+}
+
+.change {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: white solid 1px;
+}
+
+.top-left {
+    position: relative;
+    left: 5%;
+    top: 5%;
+}
+.middle {
+    position: relative;
+    top: 25%;
+    left: 40%;
+    font-size: 30px;
+}
+.bottom-right {
+    position: relative;
+    top: 50%;
+    left: 80%;
+}
+
+.maximum {
+    height: 200px;
+    width: 100px;
+}

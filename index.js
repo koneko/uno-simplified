@@ -21,6 +21,14 @@ app.get("/ui", (req, res) => {
     res.sendFile(__dirname + "/assets/html/ui.html")
 })
 
+app.get("/cards", (req, res) => {
+    res.sendFile(__dirname + "/assets/html/cards.html")
+})
+
+app.get("/js/:js", (req, res) => {
+    res.sendFile(__dirname + "/assets/js/" + req.params.js)
+})
+
 app.get("/img/:img", (req, res) => {
     res.sendFile(__dirname + "/images/" + req.params.img)
 })

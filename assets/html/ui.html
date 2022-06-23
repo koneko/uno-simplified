@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="/css/buttons.css">  <!-- gives playbtn, drawbtn, unobtn (and disabled variants)-->
 <link rel="stylesheet" href="/css/positions.css"> <!-- gives positions for each player container and their children-->
 <link rel="stylesheet" href="/css/cards.css"> <!-- gives card styles and designes-->
+<script src="https://kit.fontawesome.com/11fc85fa63.js" crossorigin="anonymous"></script> 
 <body>
     <div class="game-container">
         <div class="player-one-container">
@@ -59,4 +60,21 @@
             </div>
         </div>
     </div>
+    <script src="/js/card.js"></script>
+    <script>
+        let cards = document.querySelector('.one-cards');
+        function make() {
+            let div = document.createElement('div');
+            div.classList.add("maximum")
+            div.innerHTML = createCard("b-reverse")
+            cards.appendChild(div);
+        }
+        for(let i = 0; i < 12; i++) {
+            make();
+        }
+        let div = document.createElement('div');
+            div.classList.add("maximum")
+            div.innerHTML = createCard("r-2")
+            document.querySelector('.current-card').appendChild(div);
+    </script>
 </body>

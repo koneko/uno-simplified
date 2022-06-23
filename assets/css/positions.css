@@ -46,6 +46,12 @@ body {
     height: 100%;
     position: absolute;
     background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .player-two-container {
