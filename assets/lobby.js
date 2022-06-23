@@ -124,12 +124,8 @@ socket.on("chatMessage", data => {
 })
 
 socket.on("roomDelete", () => {
-    alert("Please refresh page, host left the room.")
+    alert("Please refresh page, host lost connection.")
     window.location.reload()
-})
-
-socket.on("turnChange", data => {
-    let { name, order } = data; // handle
 })
 
 function startGame () {
@@ -161,4 +157,62 @@ document.getElementById("message-input").addEventListener("keydown", e => {
     if (e.keyCode == 13) {
         sendMessage()
     }
+})
+
+
+// logic:
+// start(gameStart)
+// => hand out cards(recieveCards), host goes first
+// => first player plays or draws(playCard or drawCard)
+// => change turn (turnChange)
+// => next player plays (playCard or drawCard)
+// => repeat, handling color changes and "event cards" (repeat before)
+// => when a person has no cards left, they are declared winner and game ends, kicking everyone out and closing room (gameEnd)
+
+
+// game logic
+
+socket.on("gameStart", data => {
+    // handle starting the game
+    let pre = document.querySelectorAll(".pre-container")
+    let gamecontainer = document.querySelector(".game-container")
+    pre.style.display = "none"
+    gamecontainer.style.display = "block"
+    let { order } = data;
+})
+
+socket.on("turnChange", data => {
+    let { name, order } = data; // handle ui on turn change here
+})
+
+socket.on("drawCard", data => {
+    let { name, card, order } = data; // handle ui on draw card here
+})
+
+socket.on("playCard", data => {
+    let { name, card, order } = data; // handle ui on play card here
+})
+
+socket.on("changeColor", data => {
+    let { name, color, order } = data; // handle ui on change color here
+})
+
+socket.on("reverseOrder", data => {
+    let { name, orderArray } = data; // handle ui on reverse order here
+})
+
+socket.on("skipTurn", data => {
+    let { name, playerOrder, skippedName, skippedOrder } = data; // handle ui on skip turn here
+})
+
+socket.on("forceDraw", data => {
+    let { name, playerOrder, forcedName, forcedOrder } = data; // handle ui on force draw here
+})
+
+socket.on("recieveCards", data => {
+    let { key, cards } = data // get your cards, update ui
+})
+
+socket.on("gameEnd", data => {
+    // handle game end
 })

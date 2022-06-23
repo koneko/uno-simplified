@@ -1,0 +1,11 @@
+.pile-card {
+    background-image: url("/img/back.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* for cards clip-path: ellipse(25% 40% at 50% 50%); */

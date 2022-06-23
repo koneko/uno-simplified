@@ -17,6 +17,18 @@ app.get("/lobby/script.js", (req, res) => {
     res.sendFile(__dirname + "/assets/lobby.js")
 })
 
+app.get("/ui", (req, res) => {
+    res.sendFile(__dirname + "/assets/ui.html")
+})
+
+app.get("/img/:img", (req, res) => {
+    res.sendFile(__dirname + "/images/" + req.params.img)
+})
+
+app.get("/css/:css", (req, res) => {
+    res.sendFile(__dirname + "/assets/" + req.params.css)
+})
+
 let server = app.listen(port, () => console.log("Listening on port " + port));
 const io = new Server(server)
 

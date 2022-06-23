@@ -1,0 +1,50 @@
+button {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    font-weight: lighter;
+    cursor: pointer;
+}
+.playbtn {
+    background-color: rgb(71, 255, 25);
+    color: white;
+}
+.playbtn:hover {
+    background-color: rgb(66, 230, 25);
+}
+.playbtn-disabled {
+    background-color: rgb(45, 148, 20);
+    color: white;
+    cursor: not-allowed;
+}
+
+.drawbtn {
+    background-color: rgb(0, 255, 179);
+    color: white;
+}
+.drawbtn:hover {
+    background-color: rgb(0, 230, 150);
+}
+.drawbtn-disabled {
+    background-color: rgb(0, 121, 84);;
+    color: white;
+    cursor: not-allowed;
+}
+
+.unobtn {
+    background-color: rgb(255, 145, 0);
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.unobtn:hover {
+    background-color: rgb(230, 130, 0);
+}
+.unobtn-disabled {
+    background-color: rgb(121, 84, 0);
+    color: white;
+    cursor: not-allowed;
+}
